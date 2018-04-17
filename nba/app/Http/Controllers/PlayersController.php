@@ -3,11 +3,13 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Player;
 
 class PlayersController extends Controller
 {
     public function show($id)
     {
-        return view('player.show');
+        $player = Player::find($id);
+        return view('player.show', compact('player'));
     }
 }
