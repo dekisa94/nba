@@ -22,3 +22,5 @@ Route::post('/register', 'RegisterController@store');
 Route::get('/logout', 'LoginController@logout');
 Route::get('/login', 'LoginController@create')->name('login');
 Route::post('/login', 'LoginController@store');
+
+Route::post('/teams/{team_id}/comment', 'CommentsController@store')->name('comment-team');

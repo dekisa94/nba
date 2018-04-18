@@ -19,9 +19,25 @@ Team
 @endforeach
 </ul>
 <hr>
+<h2>Leave your comment here:</h2>
+
+<form method="POST" action="{{ route('comment-team', ['team_id' => $team->id]) }}">
+    {{csrf_field()}}
+    <div class="form-group">
+        <label for="content">Text of comment:</label>
+        <input type="textarea" id="content" name="content" class="form-control">
+        @include('partials.error-message', ['fieldTitle' => 'content'])
+    </div>
+    <div class="form-group">
+        <button type="submit" class="btn btn-primary">Comment</button>
+    </div>
+</form>
+
 <h2>Comments:</h2>
 @foreach($team->comments as $comment)
-    {{ $comment->content }}
+<ul>
+    <li><i>{{ $comment->user->name }}</i> <b>{{ $comment->content }}</b> <br></li>
+</ul>
 @endforeach
 
 @endsection
