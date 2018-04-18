@@ -18,5 +18,10 @@ Team
 <li><a href="{{route('single-player', ['id' => $player->id])}}">{{ $player->first_name }}</a></li>
 @endforeach
 </ul>
+<hr>
+<h2>Comments:</h2>
+@foreach($team->comments as $comment)
+    {{ $comment->content }}
+@endforeach
 
 @endsection

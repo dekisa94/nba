@@ -11,4 +11,5 @@ TEAMS
     <li><a href="{{route('single-team', ['id' => $team->id])}}">{{ $team->name }}</a></li>
 @endforeach
 </ul>
+
 @endsection
