@@ -13,4 +13,12 @@
 
 Route::get('/teams', 'TeamsController@index');
 Route::get('/teams/{id}', 'TeamsController@show')->name('single-team');
+
 Route::get('/players/{id}', 'PlayersController@show')->name('single-player');
+
+Route::get('/register', 'RegisterController@create');
+Route::post('/register', 'RegisterController@store');
+
+Route::get('/logout', 'LoginController@logout');
+Route::get('/login', 'LoginController@create');
+Route::post('/login', 'LoginController@store');

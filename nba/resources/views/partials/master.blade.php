@@ -1,0 +1,43 @@
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <title>@yield('title')</title>
+
+    <!-- Bootstrap core CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/css/bootstrap.min.css" integrity="sha384-9gVQ4dYFwwWSjIDZnLEWnxCjeSWFphJiwGPXr1jddIhOegiu1FwO5qRGvFXOdJZ4" crossorigin="anonymous">
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/js/bootstrap.min.js" integrity="sha384-uefMccjFJAIv6A+rW+L4AHf99KvxDjWSu1z9VI8SKNVmz4sk7buKt/6v9KI65qnm" crossorigin="anonymous"></script>
+  </head>
+
+  <body>
+    <div class="container">
+    @yield('content')
+    <nav class="navbar fixed-bottom navbar-expand-sm navbar-dark bg-dark">
+      <a class="navbar-brand" href="/teams">NBA</a>
+      <div class="collapse navbar-collapse" id="navbarCollapse">
+        <ul class="navbar-nav mr-auto">
+        @if(auth()->check())
+        <li class="nav-item">
+            <a class="nav-link" href="">{{auth()->user()->name}}</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link disabled" href="/logout">Logout</a>
+          </li>
+        @else
+          <li class="nav-item">
+            <a class="nav-link" href="/register">Register</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link disabled" href="/login">Login</a>
+          </li>
+          @endif
+        </ul>
+      </div>
+    </nav>
+  </body>
+</html>
