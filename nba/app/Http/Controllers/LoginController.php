@@ -25,6 +25,11 @@ class LoginController extends Controller
         {
             return back()->withErrors(['message' => 'Pogresni username ili password']);
         }
+        if(!auth()->user()->is_verified)
+        {
+            auth()->logout();
+            return back()->withErrors(['message' => 'Niste verifikovali nalog. Proverite email..']);
+        }
         return redirect('/teams');
     }
 }
