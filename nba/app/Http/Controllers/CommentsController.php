@@ -11,6 +11,7 @@ class CommentsController extends Controller
     public function __construct()
     {
         $this->middleware('auth');
+        $this->middleware('comment');
     }
     public function store($team_id)
     {
