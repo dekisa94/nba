@@ -15,7 +15,7 @@ class NewsController extends Controller
     }
     public function show($id)
     {
-        $oneNew= News::with('user')->find($id);
+        $oneNew= News::with(['user', 'teams'])->find($id);
 
         return view('news.show', compact('oneNew'));
     }
