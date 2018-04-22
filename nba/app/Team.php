@@ -18,4 +18,8 @@ class Team extends Model
     {
         return $this->belongsToMany('App\News');
     }
+    public function getRouteKeyName()
+    {
+        return 'name';
+    }
 }

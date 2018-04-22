@@ -7,9 +7,12 @@ News
 @section('content')
 
 <h1>{{$oneNew->title}}</h1>
+News for teams:
+<ul>
 @foreach($oneNew->teams as $team)
-News for teams: <a href="">{{$team->name}}</a>
+<li><a href="{{ route('show-team', ['team' => $team->name]) }}">{{$team->name}}</a></li>
 @endforeach
+</ul>
 <p>{{$oneNew->content}}</p>
 <hr>
 <b>{{$oneNew->user->name}}</b>
