@@ -27,6 +27,6 @@ class CreatePivotTableNewsTeams extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('news_teams');
+        Schema::dropIfExists('news_team');
     }
 }

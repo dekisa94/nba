@@ -15,6 +15,11 @@
   </head>
 
   <body>
+  @if($message = session('message'))
+        <div class="alert alert-success">
+          {{$message}}
+        </div>
+        @endif
     <div class="container">
     @yield('content')
     <nav class="navbar fixed-bottom navbar-expand-sm navbar-dark bg-dark">
@@ -36,6 +41,12 @@
             <a class="nav-link disabled" href="/login">Login</a>
           </li>
           @endif
+          <li class="nav-item">
+            <a class="nav-link" href="/news">NEWS</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="/news/create">Add news</a>
+          </li>
         </ul>
       </div>
     </nav>
